@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{843519FF-27A1-4953-9527-EC7B89E6EB16}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>matrix</RootNamespace>
+    <AssemblyName>matrix</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Add.Designer.cs">
+      <DependentUpon>Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixAction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatrixAction.Designer.cs">
+      <DependentUpon>MatrixAction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixActionController.cs" />
+    <Compile Include="MatrixActionModel.cs" />
+    <Compile Include="Старий проект\Addition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Addition.Designer.cs">
+      <DependentUpon>Addition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Addition1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Addition1.Designer.cs">
+      <DependentUpon>Addition1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Старий проект\Const.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Const.Designer.cs">
+      <DependentUpon>Const.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Const1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Const1.Designer.cs">
+      <DependentUpon>Const1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Kramera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Form1.Designer.cs">
+      <DependentUpon>Kramera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Gausa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Gausa.Designer.cs">
+      <DependentUpon>Gausa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Inverse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Inverse.Designer.cs">
+      <DependentUpon>Inverse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Matrix.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Старий проект\Qualifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Qualifier.Designer.cs">
+      <DependentUpon>Qualifier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Subtraction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Subtraction.Designer.cs">
+      <DependentUpon>Subtraction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Subtraction1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Subtraction1.Designer.cs">
+      <DependentUpon>Subtraction1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Summ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Summ.Designer.cs">
+      <DependentUpon>Summ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Summ1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Summ1.Designer.cs">
+      <DependentUpon>Summ1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Transposition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Transposition.Designer.cs">
+      <DependentUpon>Transposition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Старий проект\Transposition1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Старий проект\Transposition1.Designer.cs">
+      <DependentUpon>Transposition1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MatrixAction.resx">
+      <DependentUpon>MatrixAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Addition.resx">
+      <DependentUpon>Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Addition1.resx">
+      <DependentUpon>Addition1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Const.resx">
+      <DependentUpon>Const.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Const1.resx">
+      <DependentUpon>Const1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Form1.resx">
+      <DependentUpon>Kramera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Gausa.resx">
+      <DependentUpon>Gausa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Inverse.resx">
+      <DependentUpon>Inverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Старий проект\Qualifier.resx">
+      <DependentUpon>Qualifier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Subtraction.resx">
+      <DependentUpon>Subtraction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Subtraction1.resx">
+      <DependentUpon>Subtraction1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Summ.resx">
+      <DependentUpon>Summ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Summ1.resx">
+      <DependentUpon>Summ1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Transposition.resx">
+      <DependentUpon>Transposition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Старий проект\Transposition1.resx">
+      <DependentUpon>Transposition1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
