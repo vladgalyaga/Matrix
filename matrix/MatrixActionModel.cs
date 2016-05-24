@@ -14,7 +14,7 @@ namespace matrix
         public event SetMarker setMarker;
 
 
-        int m_rowCount, m_columnCount;
+        protected int m_rowCount, m_columnCount;
         protected Matrix[] m_matrices = new Matrix[3];
 
         public AMatrixActionModel(int rowCount, int columnCount)
@@ -39,8 +39,8 @@ namespace matrix
 
         public void AutoFillMatrices()
         {
+            AutoFill(m_matrices[0]);
             AutoFill(m_matrices[1]);
-            AutoFill(m_matrices[2]);
         }
         public double GetValue(int numberMatrix, int columnCount, int rowCount)
         {
@@ -49,5 +49,6 @@ namespace matrix
             return m_matrices[numberMatrix].Value[columnCount, rowCount];
         }
         public abstract string TextAction (int columnNumber, int rowNumber);
+        public abstract void Calculation();
     }
 }

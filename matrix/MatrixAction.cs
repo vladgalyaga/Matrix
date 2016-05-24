@@ -40,9 +40,14 @@ namespace matrix
             m_rowCount = rowCount;
             m_columnCount = columnCount;
 
+            m_dataGridViews[0] = dataGridView1;
+            m_dataGridViews[1] = dataGridView2;
+            m_dataGridViews[2] = dataGridView3;
+
+
             for (int k = 0; k < m_dataGridViews.Length; k++)
             {
-                m_dataGridViews[k] = dataGridView1;
+          //      m_dataGridViews[k] = dataGridView1;
 
                 for (int i = 0; i < columnCount; i++)
                 {
@@ -65,9 +70,9 @@ namespace matrix
             
             for (int t = 0; t < 2; t++)
             {
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                for (int i = 0; i < m_dataGridViews[t].Rows.Count; i++)
                 {
-                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    for (int j = 0; j <  m_dataGridViews[t].Columns.Count; j++)
                     {
                       
                         m_dataGridViews[t][j, i].Value = getValue(t, j, i);
@@ -86,9 +91,9 @@ namespace matrix
             }
 
 
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            for (int i = 0; i < dataGridView3.Columns.Count; i++)
             {
-                for (int j = 0; j < dataGridView1.Rows.Count; j++)
+                for (int j = 0; j < dataGridView3.Rows.Count; j++)
                 {
                     dataGridView3[i, j].Value = getValue(2, j, i);
                 }

@@ -71,5 +71,12 @@ namespace matrix
             Gausa frm = new Gausa();
             frm.Show();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MatrixActionController mat = new MatrixActionController(3, 5);
+            mat.OperationsOnMatrices(new Add(3, 5));
+            
+        }
     }
 }

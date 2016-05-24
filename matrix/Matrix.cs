@@ -54,6 +54,8 @@ namespace matrix
 
         public Matrix(int rowCount, int columnCount)
         {
+            RowCount = rowCount;
+            ColumnCount = columnCount;
             Value = new double[columnCount, rowCount];
 
 

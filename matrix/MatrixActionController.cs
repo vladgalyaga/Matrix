@@ -17,15 +17,23 @@ namespace matrix
             m_view = new MatrixAction(rowCount, columnCount);
             //m_model = new AMatrixActionModel(rowCount, columnCount);
             
-            m_model.setMarker += M_model_setMarker;
+      
 
             m_view.fillingButtonEventHandler += M_view_fillingButtonEventHandler;
             m_view.getValue += M_view_getValue;
             m_view.recordMatrix += M_view_recordMatrix;
             m_view.textAction += M_view_textAction;
 
+            m_view.Show();
+
+        }
+        public void OperationsOnMatrices(AMatrixActionModel model)
+        {
+            m_model = model;
+            m_model.setMarker += M_model_setMarker;
         }
 
+        
         private string M_view_textAction(int columnNumber, int rowNumber)
         {
             return m_model.TextAction(columnNumber, rowNumber);

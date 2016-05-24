@@ -44,11 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add.cs">
+    <Compile Include="Add.cs" />
+    <Compile Include="MainFinalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Add.Designer.cs">
-      <DependentUpon>Add.cs</DependentUpon>
+    <Compile Include="MainFinalForm.Designer.cs">
+      <DependentUpon>MainFinalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MatrixAction.cs">
       <SubType>Form</SubType>
@@ -152,6 +153,9 @@
     <Compile Include="Старий проект\Transposition1.Designer.cs">
       <DependentUpon>Transposition1.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MainFinalForm.resx">
+      <DependentUpon>MainFinalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MatrixAction.resx">
       <DependentUpon>MatrixAction.cs</DependentUpon>
     </EmbeddedResource>

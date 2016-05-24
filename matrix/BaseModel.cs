@@ -9,7 +9,7 @@ namespace matrix
 {
       public  class BaseModel
     {
-        int numberOfDecimals;
+        int numberOfDecimals=4;
         public int NumberOfDecimals
         {
             get
@@ -24,7 +24,7 @@ namespace matrix
         }
         bool except = false;
 
-        int minValue, maxValue;
+        int minValue = -10, maxValue=20;
         public int MinValue
         {
             get
@@ -83,7 +83,10 @@ namespace matrix
             {
                 for (int j = 0; j < matrix.ColumnCount; j++)
                 {
-                    matrix.Value[j, i] = rnd.Next(MinValue * NumberOfDecimals, MaxValue * NumberOfDecimals) / NumberOfDecimals;
+
+                    matrix.Value[j, i] = rnd.Next(MinValue, MaxValue) + Math.Round( rnd.NextDouble(), NumberOfDecimals);
+
+
                 }
             }
         }
