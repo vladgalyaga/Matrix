@@ -23,10 +23,17 @@ namespace matrix
             m_view.getValue += M_view_getValue;
             m_view.recordMatrix += M_view_recordMatrix;
             m_view.textAction += M_view_textAction;
+            m_view.calculation += M_view_calculation;
 
             m_view.Show();
 
         }
+
+        private void M_view_calculation()
+        {
+            m_model.Calculation();
+        }
+
         public void OperationsOnMatrices(AMatrixActionModel model)
         {
             m_model = model;

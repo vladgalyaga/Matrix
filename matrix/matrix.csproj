@@ -44,21 +44,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add.cs" />
+    <Compile Include="MatrixAction\Model\Add.cs" />
     <Compile Include="MainFinalForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFinalForm.Designer.cs">
       <DependentUpon>MainFinalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MatrixAction.cs">
+    <Compile Include="MatrixAction\View\MatrixAction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MatrixAction.Designer.cs">
+    <Compile Include="MatrixAction\View\MatrixAction.Designer.cs">
       <DependentUpon>MatrixAction.cs</DependentUpon>
     </Compile>
-    <Compile Include="MatrixActionController.cs" />
-    <Compile Include="MatrixActionModel.cs" />
+    <Compile Include="MatrixAction\Controller\MatrixActionController.cs" />
+    <Compile Include="MatrixAction\Model\Base\AMatrixActionModel.cs" />
+    <Compile Include="MatrixAction\Model\Mul.cs" />
+    <Compile Include="MatrixAction\Model\Sub.cs" />
     <Compile Include="Старий проект\Addition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,7 +73,7 @@
     <Compile Include="Старий проект\Addition1.Designer.cs">
       <DependentUpon>Addition1.cs</DependentUpon>
     </Compile>
-    <Compile Include="BaseModel.cs" />
+    <Compile Include="Base\BaseModel.cs" />
     <Compile Include="Старий проект\Const.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,7 +110,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Matrix.cs" />
+    <Compile Include="Base\Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Старий проект\Qualifier.cs">
@@ -156,7 +158,7 @@
     <EmbeddedResource Include="MainFinalForm.resx">
       <DependentUpon>MainFinalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MatrixAction.resx">
+    <EmbeddedResource Include="MatrixAction\View\MatrixAction.resx">
       <DependentUpon>MatrixAction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Старий проект\Addition.resx">

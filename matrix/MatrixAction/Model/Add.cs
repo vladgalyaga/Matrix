@@ -10,7 +10,7 @@ namespace matrix
     {
         public Add  (int rowCount, int columnCount):base(rowCount,columnCount)
         {
-
+          
         }
         public override string TextAction(int columnNumber, int rowNumber)
         {

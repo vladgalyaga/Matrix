@@ -62,6 +62,7 @@ namespace matrix
             {
                 MessageBox.Show("не вірні початкові дані", "помилка", MessageBoxButtons.OK,
                    MessageBoxIcon.Exclamation);
+           
             }
         }
         private double Audit(string s)
