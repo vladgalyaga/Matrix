@@ -9,7 +9,7 @@ namespace matrix
     public delegate void SetMarker(int numberMatrix, int columnCount, int rowCount);
 
 
-    public class MatrixActionModel : BaseModel
+    public abstract class AMatrixActionModel : BaseModel
     {
         public event SetMarker setMarker;
 
@@ -17,7 +17,7 @@ namespace matrix
         int m_rowCount, m_columnCount;
         protected Matrix[] m_matrices = new Matrix[3];
 
-        public MatrixActionModel(int rowCount, int columnCount)
+        public AMatrixActionModel(int rowCount, int columnCount)
         {
 
             m_rowCount = rowCount;
@@ -31,6 +31,12 @@ namespace matrix
 
             }
         }
+
+        public void RecordMAtrix(string[,] dataGridView, int matrixNumber)
+        {
+            massive(dataGridView, m_matrices[matrixNumber]);
+        }
+
         public void AutoFillMatrices()
         {
             AutoFill(m_matrices[1]);
@@ -42,5 +48,6 @@ namespace matrix
 
             return m_matrices[numberMatrix].Value[columnCount, rowCount];
         }
+        public abstract string TextAction (int columnNumber, int rowNumber);
     }
 }

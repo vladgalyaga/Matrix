@@ -12,7 +12,8 @@ namespace matrix
 {
     public delegate void FillingButtonEventHandler();
     public delegate double GetValue(int numberMatrix, int ColumnCount, int rowCount);
-
+    public delegate void RecordMatrix(string[,] dataGridView, int matrixNumber);
+    public delegate string TextAction(int columnNumber, int rowNumber);
 
 
 
@@ -20,7 +21,8 @@ namespace matrix
     {
         public event FillingButtonEventHandler fillingButtonEventHandler;
         public event GetValue getValue;
-
+        public event RecordMatrix recordMatrix;
+        public event TextAction textAction;
 
 
         Color marker = Color.Violet;
@@ -80,20 +82,21 @@ namespace matrix
         {
             for (int i = 0; i < 2; i++)
             {
-                RecordValue(m_dataGridViews[i], m_matrices[i]);
+                RecordValue(m_dataGridViews[i], i);
             }
+
 
             for (int i = 0; i < dataGridView1.Columns.Count; i++)
             {
                 for (int j = 0; j < dataGridView1.Rows.Count; j++)
                 {
-                    dataGridView3[i, j].Value = Convert.ToString(m_matrices[2].Value[i, j]);
+                    dataGridView3[i, j].Value = getValue(2, j, i);
                 }
             }
             dataGridView3.Invalidate();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button1Action_Click(object sender, EventArgs e)
         {
             OneAction();
 
@@ -117,29 +120,30 @@ namespace matrix
         {
             for (int i = 0; i < 2; i++)
             {
-                RecordValue(m_dataGridViews[i], m_matrices[i]);
+                RecordValue(m_dataGridViews[i], i);
             }
             BleachAllGrid();
 
             q11 = q1;
             q21 = q2;
 
-            SetCellValue(dataGridView3, q1, q2, Convert.ToString(m_matrices[2].Value[q1, q2]));
+            //   SetCellValue(dataGridView3, q1, q2, Convert.ToString(m_matrices[2].Value[q1, q2]));
 
+            dataGridView3[q1, q2].Value = Convert.ToString(getValue(2, q1, q2));
 
-            label1.Text = Convert.ToString("C" + q1 + q2 + "=(" + GetCellValue(dataGridView1, q1, q2) + ")+("
-                + GetCellValue(dataGridView1, q1, q2) + ")=" + GetCellValue(dataGridView3, q1, q2));
+            label1.Text = textAction(q1,q2);
+            //label1.Text = Convert.ToString("C" + q1 + q2 + "=(" + GetCellValue(dataGridView1, q1, q2) + ")+("
+            //    + GetCellValue(dataGridView1, q1, q2) + ")=" + GetCellValue(dataGridView3, q1, q2));
 
 
             if (q1 < dataGridView3.Columns.Count - 1) { q1++; } else if (q2 < dataGridView3.Rows.Count - 1) { q2++; q1 = 0; }
 
 
         }
-        protected virtual void OutputAction(Label label) { }
+     //   protected virtual void OutputAction(Label label) { }
 
-   
 
-        private void RecordValue(DataGridView dataGridView, Matrix matrix)
+        private void RecordValue(DataGridView dataGridView, int matrixNumber)
         {
             string[,] s = new string[m_columnCount, m_rowCount];
             for (int i = 0; i < m_columnCount; i++)
@@ -150,8 +154,22 @@ namespace matrix
                 }
             }
 
-            massive(s, matrix);
+           recordMatrix(s, matrixNumber);
         }
+
+        //private void RecordValue(DataGridView dataGridView, Matrix matrix)
+        //{
+        //    string[,] s = new string[m_columnCount, m_rowCount];
+        //    for (int i = 0; i < m_columnCount; i++)
+        //    {
+        //        for (int j = 0; j < m_rowCount; j++)
+        //        {
+        //            s[i, j] = Convert.ToString(dataGridView[i, j].Value);
+        //        }
+        //    }
+
+        //    massive(s, matrix);
+        //}
         private void BleachAllGrid()
         {
             for (int t = 0; t < m_dataGridViews.Length; t++)
@@ -172,19 +190,19 @@ namespace matrix
             m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = marker;
         }
        
-        protected string GetCellValue(DataGridView dataGridView, int columnNumber, int rowNumber)
-        {
-            dataGridView[columnNumber, rowNumber].Style.BackColor = marker;
+        //protected string GetCellValue(DataGridView dataGridView, int columnNumber, int rowNumber)
+        //{
+        //    dataGridView[columnNumber, rowNumber].Style.BackColor = marker;
 
-            return Convert.ToString(dataGridView1[columnNumber, rowNumber].Value);
+        //    return Convert.ToString(dataGridView1[columnNumber, rowNumber].Value);
 
-        }
-        protected void SetCellValue(DataGridView dataGridView, int columnNumber, int rowNumber, string value)
-        {
-            dataGridView[columnNumber, rowNumber].Style.BackColor = marker;
+        //}
+        //protected void SetCellValue(DataGridView dataGridView, int columnNumber, int rowNumber, string value)
+        //{
+        //    dataGridView[columnNumber, rowNumber].Style.BackColor = marker;
 
-            dataGridView[columnNumber, rowNumber].Value = value;
+        //    dataGridView[columnNumber, rowNumber].Value = value;
 
-        }
+        //}
     }
 }
