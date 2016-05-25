@@ -8,9 +8,12 @@ namespace matrix
 {
     public class Add:AMatrixActionModel
     {
+
+        int m_rowCount, m_columnCount;
         public Add  (int rowCount, int columnCount):base(rowCount,columnCount)
         {
-          
+            m_rowCount = rowCount;
+            m_columnCount = columnCount;
         }
         public override string TextAction(int columnNumber, int rowNumber)
         {

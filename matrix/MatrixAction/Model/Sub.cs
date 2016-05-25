@@ -8,9 +8,12 @@ namespace matrix
 {
     public class Sub : AMatrixActionModel
     {
+
+        int m_rowCount, m_columnCount;
         public Sub(int rowCount, int columnCount) : base(rowCount, columnCount)
         {
-           
+            m_rowCount = rowCount;
+            m_columnCount = columnCount;
         }
 
         public override void Calculation()

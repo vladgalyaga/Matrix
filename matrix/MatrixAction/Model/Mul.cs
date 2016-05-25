@@ -8,9 +8,11 @@ namespace matrix
 {
     public class Mul : AMatrixActionModel
     {
-        public Mul(int rowCount, int columnCount) : base(rowCount, columnCount)
+        public Mul(int rowCount, int columnCountM1_rowCountM2, int matrix2ColumnCount) : base()
         {
-           
+            m_matrices[0] = new Matrix(rowCount, columnCountM1_rowCountM2);
+            m_matrices[1] = new Matrix(columnCountM1_rowCountM2, matrix2ColumnCount);
+            m_matrices[2] = new Matrix(rowCount, matrix2ColumnCount);
         }
 
         public override void Calculation()

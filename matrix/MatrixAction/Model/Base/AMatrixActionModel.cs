@@ -14,14 +14,20 @@ namespace matrix
         public event SetMarker setMarker;
 
 
-        protected int m_rowCount, m_columnCount;
         protected Matrix[] m_matrices = new Matrix[3];
+
+        public AMatrixActionModel()
+        {
+
+
+
+
+        }
 
         public AMatrixActionModel(int rowCount, int columnCount)
         {
 
-            m_rowCount = rowCount;
-            m_columnCount = columnCount;
+    
 
             for (int k = 0; k < m_matrices.Length; k++)
             {
@@ -48,7 +54,7 @@ namespace matrix
 
             return m_matrices[numberMatrix].Value[columnCount, rowCount];
         }
-        public abstract string TextAction (int columnNumber, int rowNumber);
+        public abstract string TextAction(int columnNumber, int rowNumber);
         public abstract void Calculation();
     }
 }
