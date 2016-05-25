@@ -10,7 +10,7 @@ namespace matrix
     {
 
         int m_rowCount, m_columnCount;
-        public Sub(int rowCount, int columnCount) : base(rowCount, columnCount)
+        public Sub(int rowCount, int columnCount)// : base(rowCount, columnCount)
         {
             m_rowCount = rowCount;
             m_columnCount = columnCount;
@@ -25,6 +25,13 @@ namespace matrix
                     m_matrices[2].Value[j, i] = m_matrices[0].Value[j, i] - m_matrices[1].Value[j, i];
                 }
             }
+        }
+
+        public override void CreateMatrices()
+        {
+            CreateMatrix(0, m_columnCount, m_rowCount);
+            CreateMatrix(1, m_columnCount, m_rowCount);
+            CreateMatrix(2, m_columnCount, m_rowCount);
         }
 
         public override string TextAction(int columnNumber, int rowNumber)

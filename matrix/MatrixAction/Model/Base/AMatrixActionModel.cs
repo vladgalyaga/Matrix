@@ -8,10 +8,13 @@ namespace matrix
 {
     public delegate void SetMarker(int numberMatrix, int columnCount, int rowCount);
 
+    public delegate void NewMatrix(int numberMatrix, int columnCount, int rowCount);
+
 
     public abstract class AMatrixActionModel : BaseModel
     {
         public event SetMarker setMarker;
+        public event NewMatrix newMatrix;
 
 
         protected Matrix[] m_matrices = new Matrix[3];
@@ -24,19 +27,19 @@ namespace matrix
 
         }
 
-        public AMatrixActionModel(int rowCount, int columnCount)
-        {
-
-    
-
-            for (int k = 0; k < m_matrices.Length; k++)
-            {
-
-                m_matrices[k] = new Matrix(rowCount, columnCount);
+        //public AMatrixActionModel(int rowCount, int columnCount)
+        //{
 
 
-            }
-        }
+
+        //    for (int k = 0; k < m_matrices.Length; k++)
+        //    {
+        //        m_matrices[k] = new Matrix(rowCount, columnCount);
+
+        //        newMatrix(k, columnCount, rowCount);
+
+        //    }
+        //}
 
         public void RecordMAtrix(string[,] dataGridView, int matrixNumber)
         {
@@ -56,5 +59,13 @@ namespace matrix
         }
         public abstract string TextAction(int columnNumber, int rowNumber);
         public abstract void Calculation();
+        public abstract void CreateMatrices();
+
+        public void CreateMatrix(int numberMatrix, int columnCount, int rowCount)
+        {
+            m_matrices[numberMatrix] = new Matrix(rowCount, columnCount);
+
+            newMatrix(numberMatrix, columnCount, rowCount);
+        }
     }
 }

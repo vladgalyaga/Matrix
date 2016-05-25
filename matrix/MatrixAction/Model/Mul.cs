@@ -8,11 +8,15 @@ namespace matrix
 {
     public class Mul : AMatrixActionModel
     {
+        int m_m1rowCount, m_m1ColumnCount_m2RowCount, m_m2ColumnCount;
         public Mul(int rowCount, int columnCountM1_rowCountM2, int matrix2ColumnCount) : base()
         {
-            m_matrices[0] = new Matrix(rowCount, columnCountM1_rowCountM2);
-            m_matrices[1] = new Matrix(columnCountM1_rowCountM2, matrix2ColumnCount);
-            m_matrices[2] = new Matrix(rowCount, matrix2ColumnCount);
+            m_m1rowCount = rowCount;
+            m_m1ColumnCount_m2RowCount = columnCountM1_rowCountM2;
+            m_m2ColumnCount = matrix2ColumnCount;
+            //m_matrices[0] = new Matrix(rowCount, columnCountM1_rowCountM2);
+            //m_matrices[1] = new Matrix(columnCountM1_rowCountM2, matrix2ColumnCount);
+            //m_matrices[2] = new Matrix(rowCount, matrix2ColumnCount);
         }
 
         public override void Calculation()
@@ -27,6 +31,13 @@ namespace matrix
                     }
                 }
             }
+        }
+
+        public override void CreateMatrices()
+        {
+            CreateMatrix(0, m_m1ColumnCount_m2RowCount, m_m1rowCount);
+            CreateMatrix(1, m_m2ColumnCount, m_m1ColumnCount_m2RowCount);
+            CreateMatrix(2, m_m2ColumnCount, m_m1rowCount);
         }
 
         public override string TextAction(int columnNumber, int rowNumber)

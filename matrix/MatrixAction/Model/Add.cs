@@ -10,7 +10,7 @@ namespace matrix
     {
 
         int m_rowCount, m_columnCount;
-        public Add  (int rowCount, int columnCount):base(rowCount,columnCount)
+        public Add  (int rowCount, int columnCount)//:base(rowCount,columnCount)
         {
             m_rowCount = rowCount;
             m_columnCount = columnCount;
@@ -31,5 +31,11 @@ namespace matrix
             }
         }
 
+        public override void CreateMatrices()
+        {
+            CreateMatrix(0, m_columnCount, m_rowCount);
+            CreateMatrix(1, m_columnCount, m_rowCount);
+            CreateMatrix(2, m_columnCount, m_rowCount);
+        }
     }
 }

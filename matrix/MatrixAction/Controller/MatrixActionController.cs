@@ -12,9 +12,9 @@ namespace matrix
         AMatrixActionModel m_model;
 
 
-        public MatrixActionController(int rowCount, int columnCount)
+        public MatrixActionController()
         {
-            m_view = new MatrixAction(rowCount, columnCount);
+            m_view = new MatrixAction();
             //m_model = new AMatrixActionModel(rowCount, columnCount);
             
       
@@ -38,9 +38,15 @@ namespace matrix
         {
             m_model = model;
             m_model.setMarker += M_model_setMarker;
+            m_model.newMatrix += M_model_newMatrix;
+            m_model.CreateMatrices();
         }
 
-        
+        private void M_model_newMatrix(int numberMatrix, int columnCount, int rowCount)
+        {
+            m_view.CreatNewGread(numberMatrix, columnCount, rowCount);
+        }
+
         private string M_view_textAction(int columnNumber, int rowNumber)
         {
             return m_model.TextAction(columnNumber, rowNumber);

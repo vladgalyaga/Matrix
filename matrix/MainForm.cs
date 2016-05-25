@@ -69,12 +69,14 @@ namespace matrix
         private void button9_Click(object sender, EventArgs e)
         {
             Gausa frm = new Gausa();
+            
             frm.Show();
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MatrixActionController mat = new MatrixActionController(3, 5);
+            MatrixActionController mat = new MatrixActionController();
+
             mat.OperationsOnMatrices(new Add(3, 5));
             
         }

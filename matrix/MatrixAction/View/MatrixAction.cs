@@ -28,7 +28,7 @@ namespace matrix
 
 
         Color marker = Color.Violet;
-        int m_rowCount, m_columnCount;
+      //  int m_rowCount, m_columnCount;
 
         protected DataGridView[] m_dataGridViews = new DataGridView[3];
 
@@ -36,30 +36,35 @@ namespace matrix
    //     bool except;
         protected int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
 
-        public MatrixAction(int rowCount, int columnCount)
+        public MatrixAction()
         {
             InitializeComponent();
-            m_rowCount = rowCount;
-            m_columnCount = columnCount;
+            //m_rowCount = rowCount;
+            //m_columnCount = columnCount;
 
             m_dataGridViews[0] = dataGridView1;
             m_dataGridViews[1] = dataGridView2;
             m_dataGridViews[2] = dataGridView3;
 
 
-            for (int k = 0; k < m_dataGridViews.Length; k++)
-            {
+
+        }
+
+        public void CreatNewGread(int numberMatrix, int columnCount, int rowCount)
+        {
+
+          
 
                 for (int i = 0; i < columnCount; i++)
                 {
-                    m_dataGridViews[k].Columns.Add("", "");
+                    m_dataGridViews[numberMatrix].Columns.Add("", "");
                 }
                 for (int j = 0; j < rowCount; j++)
                 {
 
-                    m_dataGridViews[k].Rows.Add();
+                    m_dataGridViews[numberMatrix].Rows.Add();
                 }
-            }
+            
 
         }
 
@@ -155,10 +160,10 @@ namespace matrix
 
         private void RecordValue(DataGridView dataGridView, int matrixNumber)
         {
-            string[,] s = new string[m_columnCount, m_rowCount];
-            for (int i = 0; i < m_columnCount; i++)
+            string[,] s = new string[dataGridView.ColumnCount, dataGridView.Rows.Count];
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
             {
-                for (int j = 0; j < m_rowCount; j++)
+                for (int j = 0; j < dataGridView.Rows.Count; j++)
                 {
                     s[i, j] = Convert.ToString(dataGridView[i, j].Value);
                 }
@@ -171,9 +176,9 @@ namespace matrix
         {
             for (int t = 0; t < m_dataGridViews.Length; t++)
             {
-                for (int i = 0; i < m_columnCount; i++)
+                for (int i = 0; i < m_dataGridViews[t].ColumnCount; i++)
                 {
-                    for (int j = 0; j < m_rowCount; j++)
+                    for (int j = 0; j < m_dataGridViews[t].Rows.Count; j++)
                     {
                         m_dataGridViews[t][i, j].Style.BackColor = Color.White;
                     }

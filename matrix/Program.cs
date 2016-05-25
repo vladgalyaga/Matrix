@@ -20,11 +20,11 @@ namespace matrix
             //Application.Run(new Qualifier());
 
 
-            Application.Run(new MainForm());
+           // Application.Run(new MainForm());
+            Application.Run(new MainFinalForm());
 
-            
 
-           // Application.Run(new Summ1());
+            // Application.Run(new Summ1());
         }
     }
 }
