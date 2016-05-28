@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace matrix.MatrixAction.Model.Base
 {
-   public abstract  class ATwoMatricesAction
+   public abstract  class ATwoMatricesAction:AMatrixActionModel
     {
+        public override void AutoFillMatrices()
+        {
+            AutoFill(m_matrices[0]);
+            AutoFill(m_matrices[1]);
+        }
     }
 }

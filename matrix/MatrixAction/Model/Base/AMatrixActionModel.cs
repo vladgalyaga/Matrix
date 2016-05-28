@@ -32,11 +32,8 @@ namespace matrix
             massive(dataGridView, m_matrices[matrixNumber]);
         }
 
-        public void AutoFillMatrices()
-        {
-            AutoFill(m_matrices[0]);
-            AutoFill(m_matrices[1]);
-        }
+        public abstract void AutoFillMatrices();
+      
         public double GetValue(int numberMatrix, int columnCount, int rowCount)
         {
             setMarker(numberMatrix, columnCount, rowCount);

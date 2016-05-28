@@ -17,7 +17,7 @@ namespace matrix
 
 
         public int rowCount, colomnCount;
-        public EnteringSize()
+        public EnteringSize( )
         {
             InitializeComponent();
             numericUpDown1.Value = 3;
