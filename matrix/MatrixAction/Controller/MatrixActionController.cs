@@ -15,16 +15,13 @@ namespace matrix
         public MatrixActionController()
         {
             m_view = new MatrixAction();
-            //m_model = new AMatrixActionModel(rowCount, columnCount);
-            
-      
+
 
             m_view.fillingButtonEventHandler += M_view_fillingButtonEventHandler;
             m_view.getValue += M_view_getValue;
             m_view.recordMatrix += M_view_recordMatrix;
             m_view.textAction += M_view_textAction;
             m_view.calculation += M_view_calculation;
-
             m_view.Show();
 
         }
@@ -64,7 +61,7 @@ namespace matrix
 
         private double M_view_getValue(int numberMatrix, int ColumnCount, int rowCount)
         {
-           return m_model.GetValue(numberMatrix, ColumnCount, rowCount);
+            return m_model.GetValue(numberMatrix, ColumnCount, rowCount);
         }
 
         private void M_view_fillingButtonEventHandler()

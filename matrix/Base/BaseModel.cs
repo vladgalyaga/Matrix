@@ -7,10 +7,10 @@ using System.Windows.Forms;
 
 namespace matrix
 {
-      public  class BaseModel
+      public abstract  class BaseModel
     {
-        int numberOfDecimals=4;
-        public int NumberOfDecimals
+        static int numberOfDecimals=4;
+        static public int NumberOfDecimals
         {
             get
             {
@@ -23,9 +23,9 @@ namespace matrix
             }
         }
         bool except = false;
-
-        int minValue = -10, maxValue=20;
-        public int MinValue
+        Random rnd = new Random();
+        static int minValue = -10, maxValue=20;
+        static public int MinValue
         {
             get
             {
@@ -37,7 +37,7 @@ namespace matrix
                 minValue = value;
             }
         }
-        public int MaxValue
+        static public int MaxValue
         {
             get
             {
@@ -79,7 +79,7 @@ namespace matrix
 
         public void AutoFill(Matrix matrix)
         {
-            Random rnd = new Random();
+      
             for (int i = 0; i < matrix.RowCount; i++)
             {
                 for (int j = 0; j < matrix.ColumnCount; j++)

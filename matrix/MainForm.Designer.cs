@@ -159,6 +159,7 @@
             this.MinimumSize = new System.Drawing.Size(300, 200);
             this.Name = "MainForm";
             this.Text = "MainFotm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.ResumeLayout(false);
 
         }

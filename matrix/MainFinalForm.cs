@@ -10,13 +10,58 @@ using System.Windows.Forms;
 
 namespace matrix
 {
+
     public partial class MainFinalForm : Form
     {
+        public static Color marker ;
         public MainFinalForm()
         {
             InitializeComponent();
+            numericUpDownNumberOfDecimal.Value = 0;
+            numericUpDownMaxValue.Value = 10;
+            numericUpDownMinValue.Value = -10;
+            marker = Color.Violet;
         }
 
-      
+        private void додаванняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EnteringSize frm = new EnteringSize();
+            frm.create += CreateNewAdd;
+        }
+
+        private void відніманняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EnteringSize frm = new EnteringSize();
+            frm.create += CreateNewSub;
+        }
+
+        private void множенняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MatrixActionController mat = new MatrixActionController();
+
+            mat.OperationsOnMatrices(new Mul(3, 5, 8));
+        }
+        private void CreateNewAdd(int columnCount, int rowCount)
+        {
+            MatrixActionController mat = new MatrixActionController();
+
+            mat.OperationsOnMatrices(new Add(columnCount, rowCount));
+
+        }
+        private void CreateNewSub(int columnCount, int rowCount)
+        {
+            MatrixActionController mat = new MatrixActionController();
+
+            mat.OperationsOnMatrices(new Sub(columnCount, rowCount));
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BaseModel.MaxValue = Convert.ToInt32(numericUpDownMaxValue.Value);
+            BaseModel.MinValue = Convert.ToInt32(numericUpDownMinValue.Value);
+            BaseModel.NumberOfDecimals = Convert.ToInt32(numericUpDownNumberOfDecimal.Value);
+          
+        }
     }
 }

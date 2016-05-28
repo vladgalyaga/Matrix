@@ -77,8 +77,13 @@ namespace matrix
         {
             MatrixActionController mat = new MatrixActionController();
 
-            mat.OperationsOnMatrices(new Add(3, 5));
+            mat.OperationsOnMatrices(new Mul(3, 5,8));
             
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

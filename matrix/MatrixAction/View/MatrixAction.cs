@@ -27,14 +27,28 @@ namespace matrix
         public event Calculation calculation;
 
 
-        Color marker = Color.Violet;
-      //  int m_rowCount, m_columnCount;
+        //Color marker = Color.Violet;
+        //public Color Marker
+        //{
+        //    get
+        //    {
+        //        return marker;
+        //    }
+
+        //    set
+        //    {
+        //        marker = value;
+        //    }
+        //}
+        //  int m_rowCount, m_columnCount;
 
         protected DataGridView[] m_dataGridViews = new DataGridView[3];
 
 
    //     bool except;
         protected int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
+
+       
 
         public MatrixAction()
         {
@@ -188,7 +202,7 @@ namespace matrix
 
         public void SetMarker(int numberMatrix, int columnNumber, int rowNumber)
         {
-            m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = marker;
+            m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = MainFinalForm.marker;
         }
 
     }

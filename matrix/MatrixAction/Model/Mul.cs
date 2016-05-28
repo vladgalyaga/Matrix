@@ -48,10 +48,12 @@ namespace matrix
 
             for (int k = 0; k < m_matrices[0].ColumnCount; k++)
             {
-                s += Convert.ToString(" + (" + m_matrices[0].Value[k, rowNumber] + ")*( " + m_matrices[1].Value[columnNumber, k] + ")");
-            }
-            s += Convert.ToString("=" + m_matrices[2].Value[columnNumber, rowNumber]);
+                // s += Convert.ToString(" + (" + m_matrices[0].Value[k, rowNumber] + ")*( " + m_matrices[1].Value[columnNumber, k] + ")");
+                s += Convert.ToString(" + (" + GetValue(0,k,rowNumber) + ")*( " + GetValue(1,columnNumber,k) + ")");
 
+            }
+            //    s += Convert.ToString("=" + m_matrices[2].Value[columnNumber, rowNumber]);
+            s += Convert.ToString("=" + GetValue(2,columnNumber,rowNumber));
             return s;
         }
     }

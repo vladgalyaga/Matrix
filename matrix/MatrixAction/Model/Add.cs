@@ -10,8 +10,9 @@ namespace matrix
     {
 
         int m_rowCount, m_columnCount;
-        public Add  (int rowCount, int columnCount)//:base(rowCount,columnCount)
-        {
+        public Add  (int columnCount, int rowCount )//:base(rowCount,columnCount)
+        { 
+
             m_rowCount = rowCount;
             m_columnCount = columnCount;
         }

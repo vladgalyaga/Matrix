@@ -61,6 +61,19 @@
     <Compile Include="MatrixAction\Model\Base\AMatrixActionModel.cs" />
     <Compile Include="MatrixAction\Model\Mul.cs" />
     <Compile Include="MatrixAction\Model\Sub.cs" />
+    <Compile Include="MatrixChange\Base\AMatrixChange.cs" />
+    <Compile Include="UI\EnteringSize.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EnteringSize.Designer.cs">
+      <DependentUpon>EnteringSize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EnteringSize2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\EnteringSize2.Designer.cs">
+      <DependentUpon>EnteringSize2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Старий проект\Addition.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -161,6 +174,12 @@
     <EmbeddedResource Include="MatrixAction\View\MatrixAction.resx">
       <DependentUpon>MatrixAction.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UI\EnteringSize.resx">
+      <DependentUpon>EnteringSize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\EnteringSize2.resx">
+      <DependentUpon>EnteringSize2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Старий проект\Addition.resx">
       <DependentUpon>Addition.cs</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +246,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MatrixChange\View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

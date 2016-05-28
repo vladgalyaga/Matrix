@@ -15,31 +15,17 @@ namespace matrix
     {
         public event SetMarker setMarker;
         public event NewMatrix newMatrix;
-
-
-        protected Matrix[] m_matrices = new Matrix[3];
+       protected Matrix[] m_matrices = new Matrix[3];
 
         public AMatrixActionModel()
         {
 
+  
 
 
-
+            
         }
 
-        //public AMatrixActionModel(int rowCount, int columnCount)
-        //{
-
-
-
-        //    for (int k = 0; k < m_matrices.Length; k++)
-        //    {
-        //        m_matrices[k] = new Matrix(rowCount, columnCount);
-
-        //        newMatrix(k, columnCount, rowCount);
-
-        //    }
-        //}
 
         public void RecordMAtrix(string[,] dataGridView, int matrixNumber)
         {
