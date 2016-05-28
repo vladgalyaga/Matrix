@@ -44,12 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MatrixAction\Model\Add.cs" />
+    <Compile Include="MatrixAction\Model\Base\ATwoMatricesAction.cs" />
+    <Compile Include="MatrixAction\Model\TwoMatrices\Add.cs" />
     <Compile Include="MainFinalForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainFinalForm.Designer.cs">
       <DependentUpon>MainFinalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixAction\Model\Base\AOneMatrixActionModel.cs" />
+    <Compile Include="MatrixAction\Model\OneMatrix\Constant.cs" />
+    <Compile Include="MatrixAction\Model\OneMatrix\Transposit.cs" />
+    <Compile Include="MatrixAction\View\Constant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatrixAction\View\Constant.Designer.cs">
+      <DependentUpon>Constant.cs</DependentUpon>
     </Compile>
     <Compile Include="MatrixAction\View\MatrixAction.cs">
       <SubType>Form</SubType>
@@ -59,8 +69,14 @@
     </Compile>
     <Compile Include="MatrixAction\Controller\MatrixActionController.cs" />
     <Compile Include="MatrixAction\Model\Base\AMatrixActionModel.cs" />
-    <Compile Include="MatrixAction\Model\Mul.cs" />
-    <Compile Include="MatrixAction\Model\Sub.cs" />
+    <Compile Include="MatrixAction\Model\TwoMatrices\Mul.cs" />
+    <Compile Include="MatrixAction\Model\TwoMatrices\Sub.cs" />
+    <Compile Include="MatrixAction\View\TranspositionOfMatrix.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatrixAction\View\TranspositionOfMatrix.Designer.cs">
+      <DependentUpon>TranspositionOfMatrix.cs</DependentUpon>
+    </Compile>
     <Compile Include="MatrixChange\Base\AMatrixChange.cs" />
     <Compile Include="UI\EnteringSize.cs">
       <SubType>Form</SubType>
@@ -171,8 +187,14 @@
     <EmbeddedResource Include="MainFinalForm.resx">
       <DependentUpon>MainFinalForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MatrixAction\View\Constant.resx">
+      <DependentUpon>Constant.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MatrixAction\View\MatrixAction.resx">
       <DependentUpon>MatrixAction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatrixAction\View\TranspositionOfMatrix.resx">
+      <DependentUpon>TranspositionOfMatrix.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\EnteringSize.resx">
       <DependentUpon>EnteringSize.cs</DependentUpon>
