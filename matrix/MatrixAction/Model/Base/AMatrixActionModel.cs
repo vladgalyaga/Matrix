@@ -27,9 +27,10 @@ namespace matrix
         }
 
 
-        public void RecordMAtrix(string[,] dataGridView, int matrixNumber)
+        public virtual void RecordMAtrix(string[,] dataGridView, int matrixNumber)
         {
             massive(dataGridView, m_matrices[matrixNumber]);
+
         }
 
         public abstract void AutoFillMatrices();

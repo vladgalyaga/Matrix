@@ -18,7 +18,7 @@ namespace matrix
 
 
 
-    public partial class MatrixAction : Form
+    public partial class MatrixAction : Form, IView
     {
         public event FillingButtonEventHandler fillingButtonEventHandler;
         public event GetValue getValue;
@@ -27,58 +27,34 @@ namespace matrix
         public event Calculation calculation;
 
 
-        //Color marker = Color.Violet;
-        //public Color Marker
-        //{
-        //    get
-        //    {
-        //        return marker;
-        //    }
-
-        //    set
-        //    {
-        //        marker = value;
-        //    }
-        //}
-        //  int m_rowCount, m_columnCount;
-
         protected DataGridView[] m_dataGridViews = new DataGridView[3];
-
-
-   //     bool except;
         protected int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
 
-       
+
 
         public MatrixAction()
         {
             InitializeComponent();
-            //m_rowCount = rowCount;
-            //m_columnCount = columnCount;
-
             m_dataGridViews[0] = dataGridView1;
             m_dataGridViews[1] = dataGridView2;
             m_dataGridViews[2] = dataGridView3;
-
-
-
         }
 
         public void CreatNewGread(int numberMatrix, int columnCount, int rowCount)
         {
 
-          
 
-                for (int i = 0; i < columnCount; i++)
-                {
-                    m_dataGridViews[numberMatrix].Columns.Add("", "");
-                }
-                for (int j = 0; j < rowCount; j++)
-                {
 
-                    m_dataGridViews[numberMatrix].Rows.Add();
-                }
-            
+            for (int i = 0; i < columnCount; i++)
+            {
+                m_dataGridViews[numberMatrix].Columns.Add("", "");
+            }
+            for (int j = 0; j < rowCount; j++)
+            {
+
+                m_dataGridViews[numberMatrix].Rows.Add();
+            }
+
 
         }
 
@@ -120,7 +96,7 @@ namespace matrix
                 }
             }
             BleachAllGrid();
-        //    dataGridView3.Invalidate();
+
 
 
         }
@@ -130,17 +106,7 @@ namespace matrix
             OneAction();
 
         }
-        //private double Audit(string s)
-        //{
-        //    double d;
-        //    if (!Double.TryParse(s.Replace('.', ','), out d))
-        //    {
 
-        //        except = true;
-
-        //    }
-        //    return d;
-        //}
 
 
 
@@ -162,14 +128,14 @@ namespace matrix
             dataGridView3[q1, q2].Value = Convert.ToString(getValue(2, q1, q2));
 
             label1.Text = textAction(q1, q2);
-           
+
 
 
             if (q1 < dataGridView3.Columns.Count - 1) { q1++; } else if (q2 < dataGridView3.Rows.Count - 1) { q2++; q1 = 0; }
 
 
         }
-      
+
 
 
         private void RecordValue(DataGridView dataGridView, int matrixNumber)

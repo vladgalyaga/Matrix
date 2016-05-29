@@ -22,5 +22,10 @@ namespace matrix
         {
             throw new NotImplementedException();
         }
+        public override void AutoFillMatrices()
+        {
+            AutoFill(m_matrices[0]);
+          
+        }
     }
 }

@@ -8,10 +8,6 @@ namespace matrix
 {
    public abstract class AOneMatrixActionModel:AMatrixActionModel
     {
-        public override void AutoFillMatrices()
-        {
-            AutoFill(m_matrices[0]);
-           
-        }
+        
     }
 }

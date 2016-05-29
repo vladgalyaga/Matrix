@@ -53,7 +53,7 @@
       <DependentUpon>MainFinalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MatrixAction\Model\Base\AOneMatrixActionModel.cs" />
-    <Compile Include="MatrixAction\Model\OneMatrix\Constant.cs" />
+    <Compile Include="MatrixAction\Model\TwoMatrices\Constant.cs" />
     <Compile Include="MatrixAction\Model\OneMatrix\Transposit.cs" />
     <Compile Include="MatrixAction\View\Constant.cs">
       <SubType>Form</SubType>
@@ -61,6 +61,7 @@
     <Compile Include="MatrixAction\View\Constant.Designer.cs">
       <DependentUpon>Constant.cs</DependentUpon>
     </Compile>
+    <Compile Include="MatrixAction\View\IView.cs" />
     <Compile Include="MatrixAction\View\MatrixAction.cs">
       <SubType>Form</SubType>
     </Compile>

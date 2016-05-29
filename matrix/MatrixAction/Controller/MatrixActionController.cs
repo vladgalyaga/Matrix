@@ -8,13 +8,17 @@ namespace matrix
 {
     public class MatrixActionController
     {
-        MatrixAction m_view;
+        IView m_view;
         AMatrixActionModel m_model;
 
 
-        public MatrixActionController()
+        public MatrixActionController(Type type)
         {
-            m_view = new MatrixAction();
+           // m_view = new MatrixAction();
+
+          
+             m_view = (IView)Activator.CreateInstance(type);
+        
 
 
             m_view.fillingButtonEventHandler += M_view_fillingButtonEventHandler;

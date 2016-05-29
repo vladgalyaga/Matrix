@@ -37,7 +37,7 @@ namespace matrix
             rowCount=Convert.ToInt32(numericUpDown2.Value);
             colomnCount = Convert.ToInt32(numericUpDown1.Value);
             //create(colomnCount, rowCount);
-            MatrixActionController mat = new MatrixActionController();
+            MatrixActionController mat = new MatrixActionController(typeof(MatrixAction));
             var form = Activator.CreateInstance(m_type, colomnCount, rowCount);
             mat.OperationsOnMatrices((AMatrixActionModel)form);
 

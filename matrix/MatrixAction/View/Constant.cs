@@ -10,14 +10,26 @@ using System.Windows.Forms;
 
 namespace matrix
 {
-    public partial class Constant : Form
+    public partial class Constant : Form, IView
     {
         bool except;
         double[,] b;
         int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
+
+
+        public event FillingButtonEventHandler fillingButtonEventHandler;
+        public event GetValue getValue;
+        public event RecordMatrix recordMatrix;
+        public event TextAction textAction;
+        public event Calculation calculation;
+
+
+        protected DataGridView[] m_dataGridViews = new DataGridView[2];
+
         public Constant(int rowCount, int colomnCount)
         {
             
+
             InitializeComponent();
             for (int i = 0; i < colomnCount; i++)
             {
@@ -125,6 +137,25 @@ namespace matrix
                 except = true;
             }
             return d;
+        }
+
+        public void CreatNewGread(int numberMatrix, int columnCount, int rowCount)
+        {
+
+            for (int i = 0; i < columnCount; i++)
+            {
+                m_dataGridViews[numberMatrix].Columns.Add("", "");
+            }
+            for (int j = 0; j < rowCount; j++)
+            {
+
+                m_dataGridViews[numberMatrix].Rows.Add();
+            }
+        }
+
+        public void SetMarker(int numberMatrix, int columnNumber, int rowNumber)
+        {
+            m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = MainFinalForm.marker;
         }
     }
 }

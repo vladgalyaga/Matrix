@@ -75,7 +75,7 @@ namespace matrix
 
         private void button10_Click(object sender, EventArgs e)
         {
-            MatrixActionController mat = new MatrixActionController();
+            MatrixActionController mat = new MatrixActionController(typeof(MatrixAction));
 
             mat.OperationsOnMatrices(new Mul(3, 5,8));
             
