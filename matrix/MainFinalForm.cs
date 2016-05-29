@@ -25,14 +25,17 @@ namespace matrix
 
         private void додаванняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EnteringSize frm = new EnteringSize();
-            frm.create += CreateNewAdd;
+
+
+            EnteringSize frm = new EnteringSize(typeof(Add));
+            //EnteringSize frm = new EnteringSize();
+            //frm.create += CreateNewAdd;
         }
 
         private void відніманняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EnteringSize frm = new EnteringSize();
-            frm.create += CreateNewSub;
+            EnteringSize frm = new EnteringSize(typeof(Sub));
+           // frm.create += CreateNewSub;
         }
 
         private void множенняToolStripMenuItem_Click(object sender, EventArgs e)
@@ -41,20 +44,7 @@ namespace matrix
 
             mat.OperationsOnMatrices(new Mul(3, 5, 8));
         }
-        private void CreateNewAdd(int columnCount, int rowCount)
-        {
-            MatrixActionController mat = new MatrixActionController();
-
-            mat.OperationsOnMatrices(new Add(columnCount, rowCount));
-
-        }
-        private void CreateNewSub(int columnCount, int rowCount)
-        {
-            MatrixActionController mat = new MatrixActionController();
-
-            mat.OperationsOnMatrices(new Sub(columnCount, rowCount));
-
-        }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -62,6 +52,11 @@ namespace matrix
             BaseModel.MinValue = Convert.ToInt32(numericUpDownMinValue.Value);
             BaseModel.NumberOfDecimals = Convert.ToInt32(numericUpDownNumberOfDecimal.Value);
           
+        }
+
+        private void транспонуванняToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

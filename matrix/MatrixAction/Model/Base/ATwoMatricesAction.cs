@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace matrix.MatrixAction.Model.Base
+namespace matrix
 {
    public abstract  class ATwoMatricesAction:AMatrixActionModel
     {

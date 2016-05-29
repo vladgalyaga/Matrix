@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace matrix
 {
-    public class Mul : AMatrixActionModel
+    public class Mul : ATwoMatricesAction
     {
         int m_m1rowCount, m_m1ColumnCount_m2RowCount, m_m2ColumnCount;
         public Mul(int rowCount, int columnCountM1_rowCountM2, int matrix2ColumnCount) : base()

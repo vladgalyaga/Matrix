@@ -13,16 +13,17 @@ namespace matrix
     public delegate void CreateMatrixActionHAndler(int columnCount, int rowCount);
     public partial class EnteringSize : Form
     {
-       public  CreateMatrixActionHAndler create;
 
+        Type m_type;
 
         public int rowCount, colomnCount;
-        public EnteringSize( )
+        public EnteringSize(Type type )
         {
             InitializeComponent();
             numericUpDown1.Value = 3;
             numericUpDown2.Value = 3;
 
+            m_type = type;
 
             this.Show();
 
@@ -35,8 +36,12 @@ namespace matrix
         {
             rowCount=Convert.ToInt32(numericUpDown2.Value);
             colomnCount = Convert.ToInt32(numericUpDown1.Value);
+            //create(colomnCount, rowCount);
+            MatrixActionController mat = new MatrixActionController();
+            var form = Activator.CreateInstance(m_type, colomnCount, rowCount);
+            mat.OperationsOnMatrices((AMatrixActionModel)form);
 
-            create(colomnCount, rowCount);
+            
             Close();
         }
 

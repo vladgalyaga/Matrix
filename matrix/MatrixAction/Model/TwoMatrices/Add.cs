@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace matrix
 {
-    public class Add:AMatrixActionModel
+    public class Add: ATwoMatricesAction
     {
 
         int m_rowCount, m_columnCount;

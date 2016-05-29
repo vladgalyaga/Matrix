@@ -6,7 +6,21 @@ using System.Threading.Tasks;
 
 namespace matrix
 {
-   public class ConstantModel
+    public class ConstantModel : AOneMatrixActionModel
     {
+        public override void Calculation()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void CreateMatrices()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override string TextAction(int columnNumber, int rowNumber)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -42,6 +42,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownMinValue = new System.Windows.Forms.NumericUpDown();
+            this.транспонуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.множенняНаСкалярToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfDecimal)).BeginInit();
@@ -71,7 +73,9 @@
             this.мфToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.додаванняToolStripMenuItem,
             this.відніманняToolStripMenuItem,
-            this.множенняToolStripMenuItem});
+            this.множенняToolStripMenuItem,
+            this.транспонуванняToolStripMenuItem,
+            this.множенняНаСкалярToolStripMenuItem});
             this.мфToolStripMenuItem.Name = "мфToolStripMenuItem";
             this.мфToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.мфToolStripMenuItem.Text = "Дії над Матрицями";
@@ -79,21 +83,21 @@
             // додаванняToolStripMenuItem
             // 
             this.додаванняToolStripMenuItem.Name = "додаванняToolStripMenuItem";
-            this.додаванняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.додаванняToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.додаванняToolStripMenuItem.Text = "Додавання";
             this.додаванняToolStripMenuItem.Click += new System.EventHandler(this.додаванняToolStripMenuItem_Click);
             // 
             // відніманняToolStripMenuItem
             // 
             this.відніманняToolStripMenuItem.Name = "відніманняToolStripMenuItem";
-            this.відніманняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.відніманняToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.відніманняToolStripMenuItem.Text = "Віднімання";
             this.відніманняToolStripMenuItem.Click += new System.EventHandler(this.відніманняToolStripMenuItem_Click);
             // 
             // множенняToolStripMenuItem
             // 
             this.множенняToolStripMenuItem.Name = "множенняToolStripMenuItem";
-            this.множенняToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.множенняToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.множенняToolStripMenuItem.Text = "Множення";
             this.множенняToolStripMenuItem.Click += new System.EventHandler(this.множенняToolStripMenuItem_Click);
             // 
@@ -209,6 +213,19 @@
             this.numericUpDownMinValue.Size = new System.Drawing.Size(67, 20);
             this.numericUpDownMinValue.TabIndex = 2;
             // 
+            // транспонуванняToolStripMenuItem
+            // 
+            this.транспонуванняToolStripMenuItem.Name = "транспонуванняToolStripMenuItem";
+            this.транспонуванняToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.транспонуванняToolStripMenuItem.Text = "Транспонування";
+            this.транспонуванняToolStripMenuItem.Click += new System.EventHandler(this.транспонуванняToolStripMenuItem_Click);
+            // 
+            // множенняНаСкалярToolStripMenuItem
+            // 
+            this.множенняНаСкалярToolStripMenuItem.Name = "множенняНаСкалярToolStripMenuItem";
+            this.множенняНаСкалярToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.множенняНаСкалярToolStripMenuItem.Text = "Множення на скаляр";
+            // 
             // MainFinalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,5 +264,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown numericUpDownMinValue;
+        private System.Windows.Forms.ToolStripMenuItem транспонуванняToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem множенняНаСкалярToolStripMenuItem;
     }
 }
