@@ -27,14 +27,14 @@ namespace matrix
         {
 
 
-            EnteringSize frm = new EnteringSize(typeof(Add));
+            EnteringSize frm = new EnteringSize(typeof(Add), typeof(MatrixAction));
             //EnteringSize frm = new EnteringSize();
             //frm.create += CreateNewAdd;
         }
 
         private void відніманняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EnteringSize frm = new EnteringSize(typeof(Sub));
+            EnteringSize frm = new EnteringSize(typeof(Sub), typeof(MatrixAction));
            // frm.create += CreateNewSub;
         }
 
@@ -56,7 +56,7 @@ namespace matrix
 
         private void транспонуванняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            EnteringSize frm = new EnteringSize(typeof(Transposit), typeof(TranspositionOfMatrix));
         }
     }
 }

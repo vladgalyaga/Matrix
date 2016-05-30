@@ -14,17 +14,17 @@ namespace matrix
     public partial class EnteringSize : Form
     {
 
-        Type m_type;
-
+        Type m_typeModel, m_typeView;
+        
         public int rowCount, colomnCount;
-        public EnteringSize(Type type )
+        public EnteringSize(Type typeModel, Type typeView )
         {
             InitializeComponent();
             numericUpDown1.Value = 3;
             numericUpDown2.Value = 3;
 
-            m_type = type;
-
+            m_typeModel = typeModel;
+            m_typeView = typeView;
             this.Show();
 
         }
@@ -37,8 +37,9 @@ namespace matrix
             rowCount=Convert.ToInt32(numericUpDown2.Value);
             colomnCount = Convert.ToInt32(numericUpDown1.Value);
             //create(colomnCount, rowCount);
-            MatrixActionController mat = new MatrixActionController(typeof(MatrixAction));
-            var form = Activator.CreateInstance(m_type, colomnCount, rowCount);
+
+            MatrixActionController mat = new MatrixActionController(m_typeView);
+            var form = Activator.CreateInstance(m_typeModel, colomnCount, rowCount);
             mat.OperationsOnMatrices((AMatrixActionModel)form);
 
             

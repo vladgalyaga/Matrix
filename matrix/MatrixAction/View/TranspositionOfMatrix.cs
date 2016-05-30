@@ -10,97 +10,169 @@ using System.Windows.Forms;
 
 namespace matrix
 {
-    public partial class TranspositionOfMatrix : Form
+    public partial class TranspositionOfMatrix : Form, IView
     {
         int[,] b;
         int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
-        public TranspositionOfMatrix(int rowCount, int colomnCount)
+
+        protected DataGridView[] m_dataGridViews = new DataGridView[2];
+        public event FillingButtonEventHandler fillingButtonEventHandler;
+        public event GetValue getValue;
+        public event RecordMatrix recordMatrix;
+        public event TextAction textAction;
+        public event Calculation calculation;
+
+        public TranspositionOfMatrix()
         {
             InitializeComponent();
-            for (int i = 0; i < colomnCount; i++)
-            {
-                dataGridView1.Columns.Add("", "");
-            }
-            for (int j = 0; j < rowCount; j++)
-            {
+            m_dataGridViews[0] = dataGridView1;
+            m_dataGridViews[1] = dataGridView2;
+            //for (int i = 0; i < colomnCount; i++)
+            //{
+            //    dataGridView1.Columns.Add("", "");
+            //}
+            //for (int j = 0; j < rowCount; j++)
+            //{
 
-                dataGridView1.Rows.Add();
-            }
-            ///////////////////////////
-            for (int i = 0; i < rowCount; i++)
-            {
-                dataGridView2.Columns.Add("", "");
-            }
-            for (int j = 0; j < colomnCount; j++)
-            {
+            //    dataGridView1.Rows.Add();
+            //}
+            /////////////////////////////
+            //for (int i = 0; i < rowCount; i++)
+            //{
+            //    dataGridView2.Columns.Add("", "");
+            //}
+            //for (int j = 0; j < colomnCount; j++)
+            //{
 
-                dataGridView2.Rows.Add();
-            }
+            //    dataGridView2.Rows.Add();
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Random x = new Random();
+            fillingButtonEventHandler();
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+
+            for (int t = 0; t < 1; t++)
             {
-                for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                for (int i = 0; i < m_dataGridViews[t].Rows.Count; i++)
                 {
-                    int a = x.Next(0, 10);
-                    dataGridView1[j, i].Value = a;
+                    for (int j = 0; j < m_dataGridViews[t].Columns.Count; j++)
+                    {
 
+                        m_dataGridViews[t][j, i].Value = getValue(t, j, i);
+                    }
                 }
             }
-          
+     
+
         }
-         public void massive()
-        {
-            int[,] a = new int[dataGridView1.Columns.Count, dataGridView1.Rows.Count];
-            for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                for (int j = 0; j < dataGridView1.Rows.Count; j++)
-                    a[i, j] = Convert.ToInt32(dataGridView1[i, j].Value);
-            //друга матриця 
-             b = new int[dataGridView2.Columns.Count, dataGridView2.Rows.Count];
-            for (int i = 0; i < dataGridView2.Columns.Count; i++)
-                for (int j = 0; j < dataGridView2.Rows.Count; j++)
-                    b[i, j] = a[j,i];
-        }
+    
 
          private void button2_Click(object sender, EventArgs e)
          {
-             massive();
-             for (int i = 0; i < dataGridView2.Columns.Count; i++)
-             {
-                 for (int j = 0; j < dataGridView2.Rows.Count; j++)
-                 {
-                     dataGridView2[i, j].Value = Convert.ToString(b[i, j]);
-                 }
-             }
-             dataGridView2.Invalidate();
-         }
+            for (int i = 0; i < 1; i++)
+            {
+                RecordValue(m_dataGridViews[i], i);
+            }
+            calculation();
 
-         private void button3_Click(object sender, EventArgs e)
-         {
-             massive();
-            
-             dataGridView2[q11, q21].Style.BackColor = Color.White;
-             dataGridView1[q21,q11 ].Style.BackColor = Color.White;
-
-
-            
-             dataGridView2[q1, q2].Style.BackColor = Color.Violet;
-             dataGridView1[q2, q1].Style.BackColor = Color.Violet;
-             q11 = q1;
-             q21 = q2;
-             dataGridView2[q1, q2].Value = Convert.ToString(b[q1, q2]);
-            
-
-
-             if (q1 < dataGridView2.Columns.Count - 1) { q1++; } else if (q2 < dataGridView2.Rows.Count - 1) { q2++; q1 = 0; }
-         }
+            for (int i = 0; i < dataGridView2.Columns.Count; i++)
+            {
+                for (int j = 0; j < dataGridView2.Rows.Count; j++)
+                {
+                    dataGridView2[i, j].Value = getValue(1, i, j);
+                }
+            }
+            BleachAllGrid();
 
         
+        }
 
-            
+        private void button3_Click(object sender, EventArgs e)
+         {
+            if (q1 == 0 && q2 == 0 && q11 == 0 && q21 == 0)
+            {
+                for (int i = 0; i < 1; i++)
+                {
+                    RecordValue(m_dataGridViews[i], i);
+                }
+                calculation();
+            }
+            BleachAllGrid();
+
+            q11 = q1;
+            q21 = q2;
+
+            dataGridView2[q2, q1].Value = Convert.ToString(getValue(1, q2, q1));
+
+            label1.Text = textAction(q1, q2);
+
+
+
+            if (q1 < dataGridView1.Columns.Count - 1) { q1++; } else if (q2 < dataGridView1.Rows.Count - 1) { q2++; q1 = 0; }
+            //massive();
+
+            //dataGridView2[q11, q21].Style.BackColor = Color.White;
+            //dataGridView1[q21,q11 ].Style.BackColor = Color.White;
+
+
+
+            //dataGridView2[q1, q2].Style.BackColor = Color.Violet;
+            //dataGridView1[q2, q1].Style.BackColor = Color.Violet;
+            //q11 = q1;
+            //q21 = q2;
+            //dataGridView2[q1, q2].Value = Convert.ToString(b[q1, q2]);
+
+
+
+            //if (q1 < dataGridView2.Columns.Count - 1) { q1++; } else if (q2 < dataGridView2.Rows.Count - 1) { q2++; q1 = 0; }
+        }
+        private void RecordValue(DataGridView dataGridView, int matrixNumber)
+        {
+            string[,] s = new string[dataGridView.ColumnCount, dataGridView.Rows.Count];
+            for (int i = 0; i < dataGridView.ColumnCount; i++)
+            {
+                for (int j = 0; j < dataGridView.Rows.Count; j++)
+                {
+                    s[i, j] = Convert.ToString(dataGridView[i, j].Value);
+                }
+            }
+
+            recordMatrix(s, matrixNumber);
+        }
+
+       
+
+        public void CreatNewGread(int numberMatrix, int columnCount, int rowCount)
+        {
+            for (int i = 0; i < columnCount; i++)
+            {
+                m_dataGridViews[numberMatrix].Columns.Add("", "");
+            }
+            for (int j = 0; j < rowCount; j++)
+            {
+
+                m_dataGridViews[numberMatrix].Rows.Add();
+            }
+        }
+        public void SetMarker(int numberMatrix, int columnNumber, int rowNumber)
+        {
+            m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = MainFinalForm.marker;
+        }
+
+        private void BleachAllGrid()
+        {
+            for (int t = 0; t < m_dataGridViews.Length; t++)
+            {
+                for (int i = 0; i < m_dataGridViews[t].ColumnCount; i++)
+                {
+                    for (int j = 0; j < m_dataGridViews[t].Rows.Count; j++)
+                    {
+                        m_dataGridViews[t][i, j].Style.BackColor = Color.White;
+                    }
+                }
+            }
+        }
     }
 }
