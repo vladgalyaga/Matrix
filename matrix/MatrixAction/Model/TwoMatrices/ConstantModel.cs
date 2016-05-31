@@ -9,7 +9,7 @@ namespace matrix
     public class ConstantModel : ATwoMatricesAction
     {
         int m_rowCount, m_columnCount;
-        double m_constant;
+     //   double m_constant;
         public ConstantModel (int columnCount, int rowCount)
         {
             m_rowCount = rowCount;
@@ -25,7 +25,7 @@ namespace matrix
             {
                 for (int j = 0; j < m_columnCount; j++)
                 {
-                    m_matrices[2].Value[j, i] = m_matrices[0].Value[j, i] * m_matrices[1].Value[1, 1]; 
+                    m_matrices[2].Value[j, i] = m_matrices[0].Value[j, i] * m_matrices[1].Value[0, 0]; 
                 }
             }
         }
@@ -40,7 +40,7 @@ namespace matrix
         public override string TextAction(int columnNumber, int rowNumber)
         {
             return Convert.ToString("C" + columnNumber + rowNumber + "=(" + GetValue(0, columnNumber, rowNumber) + ")*("
-                + m_constant + ")=" + GetValue(1, columnNumber, rowNumber));
+                + GetValue(1, 0, 0) + ")=" + GetValue(2, columnNumber, rowNumber));
         }
       
     }

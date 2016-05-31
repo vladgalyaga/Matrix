@@ -34,6 +34,8 @@
             this.додаванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.відніманняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.множенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.транспонуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.множенняНаСкалярToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownNumberOfDecimal = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,8 +44,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownMinValue = new System.Windows.Forms.NumericUpDown();
-            this.транспонуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.множенняНаСкалярToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfDecimal)).BeginInit();
@@ -83,23 +83,37 @@
             // додаванняToolStripMenuItem
             // 
             this.додаванняToolStripMenuItem.Name = "додаванняToolStripMenuItem";
-            this.додаванняToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.додаванняToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.додаванняToolStripMenuItem.Text = "Додавання";
             this.додаванняToolStripMenuItem.Click += new System.EventHandler(this.додаванняToolStripMenuItem_Click);
             // 
             // відніманняToolStripMenuItem
             // 
             this.відніманняToolStripMenuItem.Name = "відніманняToolStripMenuItem";
-            this.відніманняToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.відніманняToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.відніманняToolStripMenuItem.Text = "Віднімання";
             this.відніманняToolStripMenuItem.Click += new System.EventHandler(this.відніманняToolStripMenuItem_Click);
             // 
             // множенняToolStripMenuItem
             // 
             this.множенняToolStripMenuItem.Name = "множенняToolStripMenuItem";
-            this.множенняToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
+            this.множенняToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.множенняToolStripMenuItem.Text = "Множення";
             this.множенняToolStripMenuItem.Click += new System.EventHandler(this.множенняToolStripMenuItem_Click);
+            // 
+            // транспонуванняToolStripMenuItem
+            // 
+            this.транспонуванняToolStripMenuItem.Name = "транспонуванняToolStripMenuItem";
+            this.транспонуванняToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.транспонуванняToolStripMenuItem.Text = "Транспонування";
+            this.транспонуванняToolStripMenuItem.Click += new System.EventHandler(this.транспонуванняToolStripMenuItem_Click);
+            // 
+            // множенняНаСкалярToolStripMenuItem
+            // 
+            this.множенняНаСкалярToolStripMenuItem.Name = "множенняНаСкалярToolStripMenuItem";
+            this.множенняНаСкалярToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.множенняНаСкалярToolStripMenuItem.Text = "Множення на скаляр";
+            this.множенняНаСкалярToolStripMenuItem.Click += new System.EventHandler(this.множенняНаСкалярToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -181,7 +195,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "Примінити";
+            this.button1.Text = "Застосувати";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -212,19 +226,6 @@
             this.numericUpDownMinValue.Name = "numericUpDownMinValue";
             this.numericUpDownMinValue.Size = new System.Drawing.Size(67, 20);
             this.numericUpDownMinValue.TabIndex = 2;
-            // 
-            // транспонуванняToolStripMenuItem
-            // 
-            this.транспонуванняToolStripMenuItem.Name = "транспонуванняToolStripMenuItem";
-            this.транспонуванняToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.транспонуванняToolStripMenuItem.Text = "Транспонування";
-            this.транспонуванняToolStripMenuItem.Click += new System.EventHandler(this.транспонуванняToolStripMenuItem_Click);
-            // 
-            // множенняНаСкалярToolStripMenuItem
-            // 
-            this.множенняНаСкалярToolStripMenuItem.Name = "множенняНаСкалярToolStripMenuItem";
-            this.множенняНаСкалярToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.множенняНаСкалярToolStripMenuItem.Text = "Множення на скаляр";
             // 
             // MainFinalForm
             // 

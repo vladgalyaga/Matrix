@@ -58,5 +58,10 @@ namespace matrix
         {
             EnteringSize frm = new EnteringSize(typeof(Transposit), typeof(TranspositionOfMatrix));
         }
+
+        private void множенняНаСкалярToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EnteringSize frm = new EnteringSize(typeof(ConstantModel), typeof(Constant));
+        }
     }
 }

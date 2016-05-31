@@ -12,7 +12,7 @@ namespace matrix
 {
     public partial class TranspositionOfMatrix : Form, IView
     {
-        int[,] b;
+
         int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
 
         protected DataGridView[] m_dataGridViews = new DataGridView[2];
@@ -27,25 +27,7 @@ namespace matrix
             InitializeComponent();
             m_dataGridViews[0] = dataGridView1;
             m_dataGridViews[1] = dataGridView2;
-            //for (int i = 0; i < colomnCount; i++)
-            //{
-            //    dataGridView1.Columns.Add("", "");
-            //}
-            //for (int j = 0; j < rowCount; j++)
-            //{
-
-            //    dataGridView1.Rows.Add();
-            //}
-            /////////////////////////////
-            //for (int i = 0; i < rowCount; i++)
-            //{
-            //    dataGridView2.Columns.Add("", "");
-            //}
-            //for (int j = 0; j < colomnCount; j++)
-            //{
-
-            //    dataGridView2.Rows.Add();
-            //}
+      
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -111,22 +93,7 @@ namespace matrix
 
 
             if (q1 < dataGridView1.Columns.Count - 1) { q1++; } else if (q2 < dataGridView1.Rows.Count - 1) { q2++; q1 = 0; }
-            //massive();
-
-            //dataGridView2[q11, q21].Style.BackColor = Color.White;
-            //dataGridView1[q21,q11 ].Style.BackColor = Color.White;
-
-
-
-            //dataGridView2[q1, q2].Style.BackColor = Color.Violet;
-            //dataGridView1[q2, q1].Style.BackColor = Color.Violet;
-            //q11 = q1;
-            //q21 = q2;
-            //dataGridView2[q1, q2].Value = Convert.ToString(b[q1, q2]);
-
-
-
-            //if (q1 < dataGridView2.Columns.Count - 1) { q1++; } else if (q2 < dataGridView2.Rows.Count - 1) { q2++; q1 = 0; }
+          
         }
         private void RecordValue(DataGridView dataGridView, int matrixNumber)
         {
