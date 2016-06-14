@@ -12,7 +12,7 @@ namespace matrix
 {
     public partial class Constant : Form, IView
     {
-        bool except;
+       // bool except;
 
         int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
 

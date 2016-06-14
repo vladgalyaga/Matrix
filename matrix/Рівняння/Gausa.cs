@@ -29,18 +29,18 @@ namespace matrix
         {
             Random rnd = new Random();
              
-            textBoxX1.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxX2.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxX3.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxY1.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxY2.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxY3.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxZ1.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxZ2.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxZ3.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxS1.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxS2.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBoxS3.Text = Convert.ToString(rnd.Next(-8, 11));
+            textBoxX1.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxX2.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxX3.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxY1.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxY2.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxY3.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxZ1.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxZ2.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxZ3.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxS1.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxS2.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBoxS3.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
         }
          
         

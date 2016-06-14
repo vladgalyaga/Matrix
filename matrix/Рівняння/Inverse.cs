@@ -377,15 +377,15 @@ namespace matrix
         private void button2_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
-            textBox1.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox2.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox3.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox4.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox5.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox6.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox7.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox8.Text = Convert.ToString(rnd.Next(-8, 11));
-            textBox9.Text = Convert.ToString(rnd.Next(-8, 11));
+            textBox1.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox2.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox3.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox4.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox5.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox6.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox7.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox8.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
+            textBox9.Text = Convert.ToString(rnd.Next(BaseModel.MinValue, BaseModel.MaxValue) + Math.Round(rnd.NextDouble(), BaseModel.NumberOfDecimals));
         }
         private void button3_Click(object sender, EventArgs e)
         {

@@ -21,6 +21,9 @@ namespace matrix
             numericUpDownMaxValue.Value = 10;
             numericUpDownMinValue.Value = -10;
             marker = Color.Violet;
+            BaseModel.MaxValue = Convert.ToInt32(numericUpDownMaxValue.Value);
+            BaseModel.MinValue = Convert.ToInt32(numericUpDownMinValue.Value);
+            BaseModel.NumberOfDecimals = Convert.ToInt32(numericUpDownNumberOfDecimal.Value);
         }
 
         private void додаванняToolStripMenuItem_Click(object sender, EventArgs e)
@@ -40,9 +43,11 @@ namespace matrix
 
         private void множенняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MatrixActionController mat = new MatrixActionController(typeof(MatrixAction));
+            EnteringSize2 frm = new EnteringSize2();
+            frm.Show();
+            //MatrixActionController mat = new MatrixActionController(typeof(MatrixAction));
 
-            mat.OperationsOnMatrices(new Mul(3, 5, 8));
+            //mat.OperationsOnMatrices(new Mul(3, 5, 8));
         }
        
 
@@ -62,6 +67,32 @@ namespace matrix
         private void множенняНаСкалярToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EnteringSize frm = new EnteringSize(typeof(ConstantModel), typeof(Constant));
+        }
+
+        private void визначникToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Qualifier frm = new Qualifier();
+            frm.Show();
+        }
+
+        private void гаусаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Gausa frm = new Gausa();
+
+            frm.Show();
+        }
+
+        private void крамераToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form1 frm = new Form1();
+            frm.Show();
+        }
+
+        private void оберненаМатрицяToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Inverse frm = new Inverse();
+            frm.Show();
         }
     }
 }

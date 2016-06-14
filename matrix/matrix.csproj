@@ -78,7 +78,6 @@
     <Compile Include="MatrixAction\View\TranspositionOfMatrix.Designer.cs">
       <DependentUpon>TranspositionOfMatrix.cs</DependentUpon>
     </Compile>
-    <Compile Include="MatrixChange\Base\AMatrixChange.cs" />
     <Compile Include="UI\EnteringSize.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,22 +115,22 @@
     <Compile Include="Старий проект\Const1.Designer.cs">
       <DependentUpon>Const1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Старий проект\Kramera.cs">
+    <Compile Include="Рівняння\Kramera.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Старий проект\Form1.Designer.cs">
+    <Compile Include="Рівняння\Form1.Designer.cs">
       <DependentUpon>Kramera.cs</DependentUpon>
     </Compile>
-    <Compile Include="Старий проект\Gausa.cs">
+    <Compile Include="Рівняння\Gausa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Старий проект\Gausa.Designer.cs">
+    <Compile Include="Рівняння\Gausa.Designer.cs">
       <DependentUpon>Gausa.cs</DependentUpon>
     </Compile>
-    <Compile Include="Старий проект\Inverse.cs">
+    <Compile Include="Рівняння\Inverse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Старий проект\Inverse.Designer.cs">
+    <Compile Include="Рівняння\Inverse.Designer.cs">
       <DependentUpon>Inverse.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -143,10 +142,10 @@
     <Compile Include="Base\Matrix.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Старий проект\Qualifier.cs">
+    <Compile Include="Рівняння\Qualifier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Старий проект\Qualifier.Designer.cs">
+    <Compile Include="Рівняння\Qualifier.Designer.cs">
       <DependentUpon>Qualifier.cs</DependentUpon>
     </Compile>
     <Compile Include="Старий проект\Subtraction.cs">
@@ -215,13 +214,13 @@
     <EmbeddedResource Include="Старий проект\Const1.resx">
       <DependentUpon>Const1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Старий проект\Form1.resx">
+    <EmbeddedResource Include="Рівняння\Form1.resx">
       <DependentUpon>Kramera.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Старий проект\Gausa.resx">
+    <EmbeddedResource Include="Рівняння\Gausa.resx">
       <DependentUpon>Gausa.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Старий проект\Inverse.resx">
+    <EmbeddedResource Include="Рівняння\Inverse.resx">
       <DependentUpon>Inverse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
@@ -236,7 +235,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Старий проект\Qualifier.resx">
+    <EmbeddedResource Include="Рівняння\Qualifier.resx">
       <DependentUpon>Qualifier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Старий проект\Subtraction.resx">
@@ -257,6 +256,7 @@
     <EmbeddedResource Include="Старий проект\Transposition1.resx">
       <DependentUpon>Transposition1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Base\ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -270,9 +270,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MatrixChange\View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

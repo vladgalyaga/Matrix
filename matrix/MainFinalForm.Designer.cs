@@ -44,6 +44,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownMinValue = new System.Windows.Forms.NumericUpDown();
+            this.визначникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гаусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.крамераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оберненаМатрицяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfDecimal)).BeginInit();
@@ -75,7 +79,11 @@
             this.відніманняToolStripMenuItem,
             this.множенняToolStripMenuItem,
             this.транспонуванняToolStripMenuItem,
-            this.множенняНаСкалярToolStripMenuItem});
+            this.множенняНаСкалярToolStripMenuItem,
+            this.визначникToolStripMenuItem,
+            this.гаусаToolStripMenuItem,
+            this.крамераToolStripMenuItem,
+            this.оберненаМатрицяToolStripMenuItem});
             this.мфToolStripMenuItem.Name = "мфToolStripMenuItem";
             this.мфToolStripMenuItem.Size = new System.Drawing.Size(123, 20);
             this.мфToolStripMenuItem.Text = "Дії над Матрицями";
@@ -119,14 +127,14 @@
             // 
             this.tableLayoutPanel1.ColumnCount = 9;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 73F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 45F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 112F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 86F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 139F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.numericUpDownNumberOfDecimal, 6, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.numericUpDownMaxValue, 4, 0);
@@ -145,7 +153,7 @@
             // 
             // numericUpDownNumberOfDecimal
             // 
-            this.numericUpDownNumberOfDecimal.Location = new System.Drawing.Point(451, 5);
+            this.numericUpDownNumberOfDecimal.Location = new System.Drawing.Point(445, 5);
             this.numericUpDownNumberOfDecimal.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.numericUpDownNumberOfDecimal.Name = "numericUpDownNumberOfDecimal";
             this.numericUpDownNumberOfDecimal.Size = new System.Drawing.Size(74, 20);
@@ -154,7 +162,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(339, 0);
+            this.label3.Location = new System.Drawing.Point(333, 0);
             this.label3.Name = "label3";
             this.label3.Padding = new System.Windows.Forms.Padding(5, 8, 0, 0);
             this.label3.Size = new System.Drawing.Size(103, 21);
@@ -163,7 +171,7 @@
             // 
             // numericUpDownMaxValue
             // 
-            this.numericUpDownMaxValue.Location = new System.Drawing.Point(256, 5);
+            this.numericUpDownMaxValue.Location = new System.Drawing.Point(250, 5);
             this.numericUpDownMaxValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.numericUpDownMaxValue.Maximum = new decimal(new int[] {
             1000,
@@ -182,7 +190,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(211, 0);
+            this.label2.Location = new System.Drawing.Point(205, 0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(5, 8, 0, 0);
             this.label2.Size = new System.Drawing.Size(27, 21);
@@ -211,7 +219,7 @@
             // 
             // numericUpDownMinValue
             // 
-            this.numericUpDownMinValue.Location = new System.Drawing.Point(138, 5);
+            this.numericUpDownMinValue.Location = new System.Drawing.Point(132, 5);
             this.numericUpDownMinValue.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.numericUpDownMinValue.Maximum = new decimal(new int[] {
             1000,
@@ -227,6 +235,34 @@
             this.numericUpDownMinValue.Size = new System.Drawing.Size(67, 20);
             this.numericUpDownMinValue.TabIndex = 2;
             // 
+            // визначникToolStripMenuItem
+            // 
+            this.визначникToolStripMenuItem.Name = "визначникToolStripMenuItem";
+            this.визначникToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.визначникToolStripMenuItem.Text = "Визначник";
+            this.визначникToolStripMenuItem.Click += new System.EventHandler(this.визначникToolStripMenuItem_Click);
+            // 
+            // гаусаToolStripMenuItem
+            // 
+            this.гаусаToolStripMenuItem.Name = "гаусаToolStripMenuItem";
+            this.гаусаToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.гаусаToolStripMenuItem.Text = "Гауса";
+            this.гаусаToolStripMenuItem.Click += new System.EventHandler(this.гаусаToolStripMenuItem_Click);
+            // 
+            // крамераToolStripMenuItem
+            // 
+            this.крамераToolStripMenuItem.Name = "крамераToolStripMenuItem";
+            this.крамераToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.крамераToolStripMenuItem.Text = "Крамера";
+            this.крамераToolStripMenuItem.Click += new System.EventHandler(this.крамераToolStripMenuItem_Click);
+            // 
+            // оберненаМатрицяToolStripMenuItem
+            // 
+            this.оберненаМатрицяToolStripMenuItem.Name = "оберненаМатрицяToolStripMenuItem";
+            this.оберненаМатрицяToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.оберненаМатрицяToolStripMenuItem.Text = "Обернена матриця";
+            this.оберненаМатрицяToolStripMenuItem.Click += new System.EventHandler(this.оберненаМатрицяToolStripMenuItem_Click);
+            // 
             // MainFinalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -236,7 +272,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainFinalForm";
-            this.Text = "MainFinalForm";
+            this.Text = "TeachMatrix";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -267,5 +303,9 @@
         private System.Windows.Forms.NumericUpDown numericUpDownMinValue;
         private System.Windows.Forms.ToolStripMenuItem транспонуванняToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem множенняНаСкалярToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem визначникToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem гаусаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem крамераToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem оберненаМатрицяToolStripMenuItem;
     }
 }

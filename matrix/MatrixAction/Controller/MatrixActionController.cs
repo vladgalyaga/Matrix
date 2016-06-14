@@ -14,13 +14,8 @@ namespace matrix
 
         public MatrixActionController(Type type)
         {
-           // m_view = new MatrixAction();
-
-          
+                 
              m_view = (IView)Activator.CreateInstance(type);
-        
-
-
             m_view.fillingButtonEventHandler += M_view_fillingButtonEventHandler;
             m_view.getValue += M_view_getValue;
             m_view.recordMatrix += M_view_recordMatrix;

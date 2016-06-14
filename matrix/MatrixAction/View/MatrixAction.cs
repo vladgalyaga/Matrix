@@ -38,13 +38,11 @@ namespace matrix
             m_dataGridViews[0] = dataGridView1;
             m_dataGridViews[1] = dataGridView2;
             m_dataGridViews[2] = dataGridView3;
+  //          dataGridView1.CellValueChanged
         }
 
         public void CreatNewGread(int numberMatrix, int columnCount, int rowCount)
         {
-
-
-
             for (int i = 0; i < columnCount; i++)
             {
                 m_dataGridViews[numberMatrix].Columns.Add("", "");
@@ -54,8 +52,7 @@ namespace matrix
 
                 m_dataGridViews[numberMatrix].Rows.Add();
             }
-
-
+            
         }
 
         private void fillingButton_Click(object sender, EventArgs e)
@@ -148,7 +145,6 @@ namespace matrix
                     s[i, j] = Convert.ToString(dataGridView[i, j].Value);
                 }
             }
-
             recordMatrix(s, matrixNumber);
         }
 
@@ -165,7 +161,6 @@ namespace matrix
                 }
             }
         }
-
         public void SetMarker(int numberMatrix, int columnNumber, int rowNumber)
         {
             m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = MainFinalForm.marker;

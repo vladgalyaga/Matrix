@@ -21,7 +21,7 @@ namespace matrix
 
 
          Application.Run(new MainForm());
-            Application.Run(new MainFinalForm());
+           Application.Run(new MainFinalForm());
 
 
             // Application.Run(new Summ1());

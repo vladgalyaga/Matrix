@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace matrix
 {
-    public partial class Form1 : Form
+    public partial class Kramer : Form
     {
        public double x1, x2, x3, y1, y2, y3, z1, z2, z3, s1, s2, s3, d, dx, dy, dz, x, y ,z ;
        public int i = 0;
-        public Form1()
+        public Kramer()
         {
             InitializeComponent();
         }

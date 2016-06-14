@@ -93,7 +93,7 @@
             // 
             // fillingButton
             // 
-            this.fillingButton.Location = new System.Drawing.Point(53, 247);
+            this.fillingButton.Location = new System.Drawing.Point(53, 246);
             this.fillingButton.Name = "fillingButton";
             this.fillingButton.Size = new System.Drawing.Size(183, 39);
             this.fillingButton.TabIndex = 4;
@@ -103,7 +103,7 @@
             // 
             // buttonAnswer
             // 
-            this.buttonAnswer.Location = new System.Drawing.Point(242, 247);
+            this.buttonAnswer.Location = new System.Drawing.Point(242, 246);
             this.buttonAnswer.Name = "buttonAnswer";
             this.buttonAnswer.Size = new System.Drawing.Size(180, 39);
             this.buttonAnswer.TabIndex = 5;
@@ -113,9 +113,9 @@
             // 
             // button1Action
             // 
-            this.button1Action.Location = new System.Drawing.Point(428, 248);
+            this.button1Action.Location = new System.Drawing.Point(428, 246);
             this.button1Action.Name = "button1Action";
-            this.button1Action.Size = new System.Drawing.Size(211, 38);
+            this.button1Action.Size = new System.Drawing.Size(180, 39);
             this.button1Action.TabIndex = 6;
             this.button1Action.Text = "дія";
             this.button1Action.UseVisualStyleBackColor = true;
@@ -142,7 +142,6 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Name = "MatrixAction";
-            this.Text = "Addition";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();

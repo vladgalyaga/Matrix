@@ -19,18 +19,13 @@ namespace matrix
 
         public AMatrixActionModel()
         {
-
-  
-
-
-            
+                       
         }
 
 
         public virtual void RecordMAtrix(string[,] dataGridView, int matrixNumber)
         {
             massive(dataGridView, m_matrices[matrixNumber]);
-
         }
 
         public abstract void AutoFillMatrices();
@@ -38,9 +33,9 @@ namespace matrix
         public double GetValue(int numberMatrix, int columnCount, int rowCount)
         {
             setMarker(numberMatrix, columnCount, rowCount);
-
             return m_matrices[numberMatrix].Value[columnCount, rowCount];
         }
+
         public abstract string TextAction(int columnNumber, int rowNumber);
         public abstract void Calculation();
         public abstract void CreateMatrices();
@@ -48,7 +43,6 @@ namespace matrix
         public void CreateMatrix(int numberMatrix, int columnCount, int rowCount)
         {
             m_matrices[numberMatrix] = new Matrix(rowCount, columnCount);
-
             newMatrix(numberMatrix, columnCount, rowCount);
         }
     }

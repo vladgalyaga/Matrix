@@ -189,11 +189,11 @@
             0,
             0});
             // 
-            // Summ1
+            // EnteringSize2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(628, 228);
+            this.ClientSize = new System.Drawing.Size(273, 154);
             this.Controls.Add(this.numericUpDown4);
             this.Controls.Add(this.numericUpDown3);
             this.Controls.Add(this.numericUpDown2);
@@ -204,8 +204,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "Summ1";
-            this.Text = "Summ1";
+            this.MaximumSize = new System.Drawing.Size(289, 193);
+            this.MinimumSize = new System.Drawing.Size(289, 193);
+            this.Name = "EnteringSize2";
             this.Load += new System.EventHandler(this.Summ1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
