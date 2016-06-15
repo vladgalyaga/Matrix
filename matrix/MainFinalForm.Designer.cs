@@ -36,6 +36,10 @@
             this.множенняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.транспонуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.множенняНаСкалярToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.визначникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.гаусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.крамераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.оберненаМатрицяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDownNumberOfDecimal = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
@@ -44,10 +48,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDownMinValue = new System.Windows.Forms.NumericUpDown();
-            this.визначникToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.гаусаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.крамераToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оберненаМатрицяToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.колірToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.menuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownNumberOfDecimal)).BeginInit();
@@ -68,6 +70,8 @@
             // 
             // файлToolStripMenuItem
             // 
+            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.колірToolStripMenuItem});
             this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
             this.файлToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.файлToolStripMenuItem.Text = "Файл...";
@@ -122,6 +126,34 @@
             this.множенняНаСкалярToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.множенняНаСкалярToolStripMenuItem.Text = "Множення на скаляр";
             this.множенняНаСкалярToolStripMenuItem.Click += new System.EventHandler(this.множенняНаСкалярToolStripMenuItem_Click);
+            // 
+            // визначникToolStripMenuItem
+            // 
+            this.визначникToolStripMenuItem.Name = "визначникToolStripMenuItem";
+            this.визначникToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.визначникToolStripMenuItem.Text = "Визначник";
+            this.визначникToolStripMenuItem.Click += new System.EventHandler(this.визначникToolStripMenuItem_Click);
+            // 
+            // гаусаToolStripMenuItem
+            // 
+            this.гаусаToolStripMenuItem.Name = "гаусаToolStripMenuItem";
+            this.гаусаToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.гаусаToolStripMenuItem.Text = "Гауса";
+            this.гаусаToolStripMenuItem.Click += new System.EventHandler(this.гаусаToolStripMenuItem_Click);
+            // 
+            // крамераToolStripMenuItem
+            // 
+            this.крамераToolStripMenuItem.Name = "крамераToolStripMenuItem";
+            this.крамераToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.крамераToolStripMenuItem.Text = "Крамера";
+            this.крамераToolStripMenuItem.Click += new System.EventHandler(this.крамераToolStripMenuItem_Click);
+            // 
+            // оберненаМатрицяToolStripMenuItem
+            // 
+            this.оберненаМатрицяToolStripMenuItem.Name = "оберненаМатрицяToolStripMenuItem";
+            this.оберненаМатрицяToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.оберненаМатрицяToolStripMenuItem.Text = "Обернена матриця";
+            this.оберненаМатрицяToolStripMenuItem.Click += new System.EventHandler(this.оберненаМатрицяToolStripMenuItem_Click);
             // 
             // tableLayoutPanel1
             // 
@@ -235,33 +267,12 @@
             this.numericUpDownMinValue.Size = new System.Drawing.Size(67, 20);
             this.numericUpDownMinValue.TabIndex = 2;
             // 
-            // визначникToolStripMenuItem
+            // колірToolStripMenuItem
             // 
-            this.визначникToolStripMenuItem.Name = "визначникToolStripMenuItem";
-            this.визначникToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.визначникToolStripMenuItem.Text = "Визначник";
-            this.визначникToolStripMenuItem.Click += new System.EventHandler(this.визначникToolStripMenuItem_Click);
-            // 
-            // гаусаToolStripMenuItem
-            // 
-            this.гаусаToolStripMenuItem.Name = "гаусаToolStripMenuItem";
-            this.гаусаToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.гаусаToolStripMenuItem.Text = "Гауса";
-            this.гаусаToolStripMenuItem.Click += new System.EventHandler(this.гаусаToolStripMenuItem_Click);
-            // 
-            // крамераToolStripMenuItem
-            // 
-            this.крамераToolStripMenuItem.Name = "крамераToolStripMenuItem";
-            this.крамераToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.крамераToolStripMenuItem.Text = "Крамера";
-            this.крамераToolStripMenuItem.Click += new System.EventHandler(this.крамераToolStripMenuItem_Click);
-            // 
-            // оберненаМатрицяToolStripMenuItem
-            // 
-            this.оберненаМатрицяToolStripMenuItem.Name = "оберненаМатрицяToolStripMenuItem";
-            this.оберненаМатрицяToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.оберненаМатрицяToolStripMenuItem.Text = "Обернена матриця";
-            this.оберненаМатрицяToolStripMenuItem.Click += new System.EventHandler(this.оберненаМатрицяToolStripMenuItem_Click);
+            this.колірToolStripMenuItem.Name = "колірToolStripMenuItem";
+            this.колірToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.колірToolStripMenuItem.Text = "Колір";
+            this.колірToolStripMenuItem.Click += new System.EventHandler(this.колірToolStripMenuItem_Click);
             // 
             // MainFinalForm
             // 
@@ -307,5 +318,7 @@
         private System.Windows.Forms.ToolStripMenuItem гаусаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem крамераToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оберненаМатрицяToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem колірToolStripMenuItem;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

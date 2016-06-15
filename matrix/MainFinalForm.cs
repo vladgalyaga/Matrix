@@ -14,6 +14,7 @@ namespace matrix
     public partial class MainFinalForm : Form
     {
         public static Color marker ;
+        public static Color ExceptMarker;
         public MainFinalForm()
         {
             InitializeComponent();
@@ -21,6 +22,7 @@ namespace matrix
             numericUpDownMaxValue.Value = 10;
             numericUpDownMinValue.Value = -10;
             marker = Color.Violet;
+            ExceptMarker = Color.Red;
             BaseModel.MaxValue = Convert.ToInt32(numericUpDownMaxValue.Value);
             BaseModel.MinValue = Convert.ToInt32(numericUpDownMinValue.Value);
             BaseModel.NumberOfDecimals = Convert.ToInt32(numericUpDownNumberOfDecimal.Value);
@@ -93,6 +95,21 @@ namespace matrix
 
             Inverse frm = new Inverse();
             frm.Show();
+        }
+
+        private void колірToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ColorDialog MyDialog = new ColorDialog();
+            // Keeps the user from selecting a custom color.
+            MyDialog.AllowFullOpen = false;
+            // Allows the user to get help. (The default is false.)
+            MyDialog.ShowHelp = true;
+            // Sets the initial color select to the current text color.
+            MyDialog.Color = marker;
+
+            // Update the text box color if the user clicks OK 
+            if (MyDialog.ShowDialog() == DialogResult.OK)
+                marker = MyDialog.Color;
         }
     }
 }

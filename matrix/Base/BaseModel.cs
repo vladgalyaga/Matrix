@@ -7,8 +7,11 @@ using System.Windows.Forms;
 
 namespace matrix
 {
-      public abstract  class BaseModel
+
+   
+    public abstract  class BaseModel
     {
+       
         static int numberOfDecimals=4;
         static public int NumberOfDecimals
         {
@@ -22,7 +25,7 @@ namespace matrix
                 numberOfDecimals = value;
             }
         }
-        bool except = false;
+        protected bool except = false;
         Random rnd = new Random();
         static int minValue = -10, maxValue=20;
         static public int MinValue
@@ -51,29 +54,7 @@ namespace matrix
         }
 
 
-        public void massive(string[,] massiveOfString, Matrix matrix)
-        {
-           
-            for (int i = 0; i < matrix.ColumnCount; i++)
-                for (int j = 0; j < matrix.RowCount; j++)
-                    matrix.Value[i,j] = Audit(massiveOfString[i, j]);
-
-            if (except == true)
-            {
-                MessageBox.Show("не вірні початкові дані", "помилка", MessageBoxButtons.OK,
-                   MessageBoxIcon.Exclamation);
-           
-            }
-        }
-        private double Audit(string s)
-        {
-            double d;
-            if (!Double.TryParse(s.Replace('.', ','), out d))
-            {
-                except = true;
-            }
-            return d;
-        }
+      
 
 
 

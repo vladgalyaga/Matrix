@@ -26,6 +26,7 @@ namespace matrix
         public event TextAction textAction;
         public event Calculation calculation;
 
+        bool exc;
 
         protected DataGridView[] m_dataGridViews = new DataGridView[3];
         protected int q1 = 0, q2 = 0, q11 = 0, q21 = 0;
@@ -78,28 +79,30 @@ namespace matrix
 
         private void buttonAnswer_Click(object sender, EventArgs e)
         {
-
-            for (int i = 0; i < 2; i++)
+            if (exc == false)
             {
-                RecordValue(m_dataGridViews[i], i);
-            }
-            calculation();
-
-            for (int i = 0; i < dataGridView3.Columns.Count; i++)
-            {
-                for (int j = 0; j < dataGridView3.Rows.Count; j++)
+                for (int i = 0; i < 2; i++)
                 {
-                    dataGridView3[i, j].Value = getValue(2, i, j);
+                    RecordValue(m_dataGridViews[i], i);
                 }
+                calculation();
+
+                for (int i = 0; i < dataGridView3.Columns.Count; i++)
+                {
+                    for (int j = 0; j < dataGridView3.Rows.Count; j++)
+                    {
+                        dataGridView3[i, j].Value = getValue(2, i, j);
+                    }
+                }
+                BleachAllGrid();
+
             }
-            BleachAllGrid();
-
-
 
         }
 
         private void button1Action_Click(object sender, EventArgs e)
         {
+            if(exc ==false)
             OneAction();
 
         }
@@ -109,6 +112,18 @@ namespace matrix
 
         public void OneAction()
         {
+            for (int t = 0; t < 2; t++)
+            {
+                for (int i = 0; i < m_dataGridViews[t].Rows.Count; i++)
+                {
+                    for (int j = 0; j < m_dataGridViews[t].Columns.Count; j++)
+                    {
+
+                        m_dataGridViews[t].ReadOnly = true;
+                    }
+                }
+            }
+
             if (q1 == 0 && q2 == 0 && q11 == 0 && q21 == 0)
             {
                 for (int i = 0; i < 2; i++)
@@ -166,5 +181,11 @@ namespace matrix
             m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = MainFinalForm.marker;
         }
 
+        public void Except(int numberMatrix, int columnCount, int rowCount)
+        {
+            m_dataGridViews[numberMatrix][columnCount, rowCount].Style.BackColor = MainFinalForm.ExceptMarker;
+
+            exc = true;
+        }
     }
 }

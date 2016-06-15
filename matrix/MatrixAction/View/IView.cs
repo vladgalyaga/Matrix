@@ -16,6 +16,7 @@ namespace matrix
 
         void CreatNewGread(int numberMatrix, int columnCount, int rowCount);
         void SetMarker(int numberMatrix, int columnNumber, int rowNumber);
+        void Except(int numberMatrix, int columnCount, int rowCount);
 
         void Show();
     }

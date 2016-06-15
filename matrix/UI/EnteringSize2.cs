@@ -43,9 +43,13 @@ namespace matrix
             r2c1 = Convert.ToInt32(numericUpDown2.Value);
             c2 = Convert.ToInt32(numericUpDown4.Value);
 
-            Summ frm = new Summ(r1, r2c1, c2);
+           // Summ frm = new Summ(r1, r2c1, c2);
 
-            frm.Show();
+            MatrixActionController mat = new MatrixActionController(typeof(MatrixAction));
+
+            mat.OperationsOnMatrices(new Mul(r1, r2c1, c2));
+
+           
             Close();
 
         }

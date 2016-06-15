@@ -35,7 +35,13 @@ namespace matrix
             m_model = model;
             m_model.setMarker += M_model_setMarker;
             m_model.newMatrix += M_model_newMatrix;
+            m_model.exeptionInEntering += M_model_exeptionInEntering;
             m_model.CreateMatrices();
+        }
+
+        private void M_model_exeptionInEntering(int numberMatrix, int columnCount, int rowCount)
+        {
+            m_view.Except(numberMatrix, columnCount, rowCount);
         }
 
         private void M_model_newMatrix(int numberMatrix, int columnCount, int rowCount)

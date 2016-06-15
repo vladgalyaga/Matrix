@@ -147,5 +147,10 @@ namespace matrix
         {
             m_dataGridViews[numberMatrix][columnNumber, rowNumber].Style.BackColor = MainFinalForm.marker;
         }
+
+        public void Except(int numberMatrix, int columnCount, int rowCount)
+        {
+            m_dataGridViews[numberMatrix][columnCount, rowCount].Style.BackColor = MainFinalForm.ExceptMarker;
+        }
     }
 }
